@@ -1,5 +1,5 @@
 /* Budget Tracker — Service Worker */
-const CACHE_NAME = 'budget-tracker-v2';
+const CACHE_NAME = 'budget-tracker-v3';
 const STATIC_ASSETS = [
   '/',
   '/index.html',
@@ -15,6 +15,7 @@ const STATIC_ASSETS = [
   '/js/calendar.js',
   '/js/reports.js',
   '/js/settings.js',
+  '/js/admin.js',
   '/manifest.json',
 ];
 

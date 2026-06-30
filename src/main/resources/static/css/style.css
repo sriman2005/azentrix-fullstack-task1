@@ -1125,3 +1125,10 @@ input, select, textarea { font-family: var(--font); outline: none; border: none;
   transition: var(--transition);
 }
 .color-swatch:hover, .color-swatch.selected { border-color: var(--text-primary); transform: scale(1.15); }
+
+/* Admin Panel Styles */
+.badge-admin { background:linear-gradient(135deg,#6366f1,#8b5cf6); color:white; }
+.badge-user { background:var(--bg-tertiary); color:var(--text-secondary); }
+.icon-btn-sm { width:32px; height:32px; border-radius:8px; border:1px solid var(--border); background:var(--bg-secondary); color:var(--text-secondary); cursor:pointer; display:flex; align-items:center; justify-content:center; transition:all 0.2s; }
+.icon-btn-sm:hover { background:var(--accent); color:white; border-color:var(--accent); }
+.icon-btn-sm.danger:hover { background:#ef4444; border-color:#ef4444; }

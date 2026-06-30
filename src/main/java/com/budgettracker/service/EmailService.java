@@ -32,7 +32,8 @@ public class EmailService {
             MimeMessage message = mailSender.createMimeMessage();
             MimeMessageHelper helper = new MimeMessageHelper(message, true, "UTF-8");
 
-            helper.setFrom(fromEmail, "Budget Tracker");
+            helper.setFrom(fromEmail, "Budget Tracker Team");
+            helper.setReplyTo(fromEmail, "Budget Tracker Support");
             helper.setTo(toEmail);
             helper.setSubject("🔐 Reset Your Password — Budget Tracker");
 
@@ -54,7 +55,8 @@ public class EmailService {
             MimeMessage message = mailSender.createMimeMessage();
             MimeMessageHelper helper = new MimeMessageHelper(message, true, "UTF-8");
 
-            helper.setFrom(fromEmail, "Budget Tracker");
+            helper.setFrom(fromEmail, "Budget Tracker Team");
+            helper.setReplyTo(fromEmail, "Budget Tracker Support");
             helper.setTo(toEmail);
             helper.setSubject("⚠️ Budget Alert — " + categoryName);
 
@@ -74,7 +76,8 @@ public class EmailService {
             MimeMessage message = mailSender.createMimeMessage();
             MimeMessageHelper helper = new MimeMessageHelper(message, true, "UTF-8");
 
-            helper.setFrom(fromEmail, "Budget Tracker");
+            helper.setFrom(fromEmail, "Budget Tracker Team");
+            helper.setReplyTo(fromEmail, "Budget Tracker Support");
             helper.setTo(toEmail);
             helper.setSubject("🎉 Welcome to Budget Tracker!");
 

@@ -60,6 +60,7 @@ function saveAuth(data) {
   localStorage.setItem('bt_user', JSON.stringify(data));
   App.currency = CURRENCIES[data.currency] || '₹';
   App.darkMode = data.darkMode;
+  if (data.role) App.user.role = data.role;
 }
 
 function logout() {
@@ -86,6 +87,9 @@ function showAppSection() {
   App.currency = CURRENCIES[App.user?.currency] || '₹';
   document.getElementById('topbar-currency').textContent =
     `${App.currency} ${App.user?.currency || 'INR'}`;
+  // Show admin nav if user is admin
+  const adminNav = document.getElementById('nav-admin');
+  if (adminNav) adminNav.style.display = (App.user?.role === 'ADMIN') ? 'flex' : 'none';
 }
 
 function showPage(pageId) {
@@ -128,6 +132,7 @@ function navigateTo(pageName) {
     calendar: loadCalendar,
     reports: loadReports,
     settings: loadSettings,
+    admin: loadAdmin,
   };
   if (loaders[pageName]) loaders[pageName]();
 

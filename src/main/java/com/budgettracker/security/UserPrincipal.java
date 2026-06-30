@@ -24,7 +24,8 @@ public class UserPrincipal implements UserDetails {
     }
 
     public static UserPrincipal create(User user) {
-        List<GrantedAuthority> authorities = List.of(new SimpleGrantedAuthority("ROLE_USER"));
+        String role = user.getRole() != null ? user.getRole() : "USER";
+        List<GrantedAuthority> authorities = List.of(new SimpleGrantedAuthority(role));
         return new UserPrincipal(user.getId(), user.getEmail(), user.getPassword(), authorities);
     }
 

@@ -43,7 +43,7 @@ function walletCard(w) {
         <div class="wallet-type">${w.type.replace('_',' ')} ${w.isDefault?'• Default':''}</div>
         <div class="wallet-icon"><i class="fas fa-${w.icon||'wallet'}"></i></div>
       </div>
-      <div class="wallet-balance">${formatCurrency(w.balance)}</div>
+      <div class="wallet-balance">${parseFloat(w.balance) < 0 ? '-' : ''}${formatCurrency(Math.abs(parseFloat(w.balance)))}</div>
       <div class="wallet-name">${escHtml(w.name)}</div>
       <div class="wallet-actions">
         <button class="wallet-action-btn" onclick="openWalletModal(${JSON.stringify(w).replace(/"/g,'&quot;')})"><i class="fas fa-edit"></i> Edit</button>

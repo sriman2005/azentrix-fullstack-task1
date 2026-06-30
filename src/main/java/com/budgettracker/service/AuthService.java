@@ -64,7 +64,7 @@ public class AuthService {
         String jwt = tokenProvider.generateToken(authentication);
 
         return new JwtResponse(jwt, user.getId(), user.getEmail(),
-                user.getFullName(), user.getCurrency(), user.isDarkMode());
+                user.getFullName(), user.getCurrency(), user.isDarkMode(), user.getRole());
     }
 
     public JwtResponse login(AuthDto.LoginRequest request) {
@@ -77,7 +77,7 @@ public class AuthService {
                 .orElseThrow(() -> new RuntimeException("User not found"));
 
         return new JwtResponse(jwt, user.getId(), user.getEmail(),
-                user.getFullName(), user.getCurrency(), user.isDarkMode());
+                user.getFullName(), user.getCurrency(), user.isDarkMode(), user.getRole());
     }
 
     @Transactional

@@ -30,6 +30,10 @@ public class WalletService {
         User user = userRepository.findById(userId)
                 .orElseThrow(() -> new RuntimeException("User not found"));
 
+        if (walletRepository.existsByUserIdAndNameIgnoreCase(userId, request.getName())) {
+            throw new RuntimeException("A wallet with name '" + request.getName() + "' already exists");
+        }
+
         if (request.isDefault()) {
             walletRepository.findByUserIdAndIsDefaultTrue(userId).ifPresent(w -> {
                 w.setDefault(false);

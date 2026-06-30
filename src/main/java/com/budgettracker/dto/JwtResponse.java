@@ -15,13 +15,15 @@ public class JwtResponse {
     private String fullName;
     private String currency;
     private boolean darkMode;
+    private String role;
 
-    public JwtResponse(String token, Long id, String email, String fullName, String currency, boolean darkMode) {
+    public JwtResponse(String token, Long id, String email, String fullName, String currency, boolean darkMode, String role) {
         this.token = token;
         this.id = id;
         this.email = email;
         this.fullName = fullName;
         this.currency = currency;
         this.darkMode = darkMode;
+        this.role = role;
     }
 }

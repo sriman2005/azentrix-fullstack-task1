@@ -48,6 +48,10 @@ public class User {
     @Builder.Default
     private String currency = "INR";
 
+    @Column(nullable = false)
+    @Builder.Default
+    private String role = "USER"; // USER or ADMIN
+
     @CreationTimestamp
     @Column(name = "created_at", updatable = false)
     private LocalDateTime createdAt;
